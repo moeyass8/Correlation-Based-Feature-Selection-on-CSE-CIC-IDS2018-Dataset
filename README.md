@@ -5,4 +5,4 @@ This python code will process the CFS algorythm on CSE-CIC-IDS2018 Data set, you
 - the file will compute the merit of each set (you need to look at the algorithm at wikipedia to know how it computes the merit)
 - Best First Search is used to seach for feature set
 
-Along the processing the program will print the best feature sets, the last feature will be the most correlated set. 
+Along the processing the program will print the best feature sets, the last feature set (when finish is printer) will be the most correlated set. 
