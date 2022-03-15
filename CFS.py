@@ -1,7 +1,6 @@
-#from numba import jit, cuda
 import time
 import pandas as pd
-#from sklearn.preprocessing import StandardScaler
+
 import json
 from math import sqrt
 import scipy.stats as stats
@@ -34,15 +33,8 @@ def preprocess(DatasetLocation):
 	label = pd.get_dummies(label)
 	label = label.drop(["Label_Benign"], axis=1)
 
-	#print(features)
-	
-	return(features,label)
-#	scaler = StandardScaler()
-#	scaler.fit(features)
-#	features1 = scaler.transform(features)
-
-#	features2 = pd.DataFrame(features1, columns=col)
-#	features2.to_csv("/root/Desktop/Thesis/cicdataset/standarized.csv")	
+		
+	return(features,label)	
 
 
 def check_feature_type(feature):
@@ -81,7 +73,7 @@ def detect_correlation_type(x,y):
 		return("MCC")
 
 
-#@jit(target = "cuda")
+
 def correlate(c,x,y,df):
 	
 	
@@ -130,7 +122,7 @@ def correlate(c,x,y,df):
 		return(list)
 
 
-#@jit(target ="cuda")
+
 def merit_compute(subset, label):
 	k = len(subset)
 	check_list = []
@@ -219,7 +211,7 @@ if __name__ == "__main__":
 	best_value = -1
 	df = pd.concat([features,label])
 	new_label = list1[inp]
-	#print(list(df.columns))
+	
 	features_l = list(features.columns)
 	for feature in features_l:
 		type = check_feature_type(feature)
@@ -242,10 +234,7 @@ if __name__ == "__main__":
 	visited = []
 	n_backtrack = 0
 	max_backtrack = 5
-	#print(queue.pop())
-	#subsez, prioritz = queue.pop()
-	#print(subsez)
-	#print(prioritz)
+
 	n = 1
 	while not queue.isEmpty():
 
