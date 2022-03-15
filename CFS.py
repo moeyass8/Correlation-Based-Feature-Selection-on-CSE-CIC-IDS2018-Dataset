@@ -239,7 +239,6 @@ if __name__ == "__main__":
 	while not queue.isEmpty():
 
 		subset, priority = queue.pop()
-		print(subset)
 		if (priority < best_value):
 			print("The priority of the current merit is: ",priority,"\nAnd the best value is: ", best_value)
 			n_backtrack +=1
@@ -264,6 +263,7 @@ if __name__ == "__main__":
 				visited.append(temp_subset)
 				merit = merit_compute(temp_subset, new_label)
 				queue.push(temp_subset, merit)
+		print(subset)
 	time_taken = time.time() - start_time
 	print("Time took to finish the process is: ",time_taken/60, " minutes" )
 	print("finish")
